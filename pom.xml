@@ -7,6 +7,9 @@
     <groupId>my.rinat</groupId>
     <artifactId>spring-framework-examples</artifactId>
     <version>0.0</version>
+    <modules>
+        <module>spring-boot-examples</module>
+    </modules>
     <packaging>pom</packaging>
 
     <properties>
