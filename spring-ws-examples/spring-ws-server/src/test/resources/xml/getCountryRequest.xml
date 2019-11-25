@@ -1,0 +1,3 @@
+<ns2:getCountryRequest xmlns:ns2="http://www.rinat.my/country/gen">
+    <ns2:name>Poland</ns2:name>
+</ns2:getCountryRequest>

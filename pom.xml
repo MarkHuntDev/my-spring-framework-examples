@@ -9,6 +9,7 @@
     <version>0.0</version>
     <modules>
         <module>spring-boot-examples</module>
+        <module>spring-ws-examples</module>
     </modules>
     <packaging>pom</packaging>
 
@@ -21,7 +22,7 @@
         <project.build.sourceEncoding>${project.encoding}</project.build.sourceEncoding>
         <project.reporting.outputEncoding>${project.encoding}</project.reporting.outputEncoding>
 
-        <spring-boot.version>2.2.1.RELEASE</spring-boot.version>
+        <spring-boot.version>2.1.8.RELEASE</spring-boot.version>
 
     </properties>
 
@@ -36,13 +37,20 @@
                 <scope>import</scope>
             </dependency>
 
+            <!-- Testing -->
+
+            <dependency>
+                <groupId>org.hamcrest</groupId>
+                <artifactId>java-hamcrest</artifactId>
+                <version>2.0.0.0</version>
+                <scope>test</scope>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
     <build>
-
         <pluginManagement>
-
             <plugins>
 
                 <plugin>
@@ -64,10 +72,17 @@
                     </executions>
                 </plugin>
 
+                <!--
+                maven-surefire-plugin supports JUnit 5 starting with 2.22.0 version
+                -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.22.2</version>
+                </plugin>
+
             </plugins>
-
         </pluginManagement>
-
     </build>
 
 </project>
