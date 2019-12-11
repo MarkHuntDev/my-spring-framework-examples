@@ -1,0 +1,8 @@
+<ns2:consumeCountryRequest xmlns:ns2="http://www.rinat.my/consumer/domain/country">
+    <ns2:country>
+        <ns2:name>Spain</ns2:name>
+        <ns2:population>46704314</ns2:population>
+        <ns2:capital>Madrid</ns2:capital>
+        <ns2:currency>EUR</ns2:currency>
+    </ns2:country>
+</ns2:consumeCountryRequest>

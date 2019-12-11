@@ -1,0 +1,17 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:coun="http://www.rinat.my/consumer/domain/country">
+    <soapenv:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+        <wsa:Action>http://www.rinat.my/server/domain/country/getCountryResponse</wsa:Action>
+        <wsa:MessageID>uuid:ccfcf059-e938-4117-ae5c-aed1bb95d7c9</wsa:MessageID>
+    </soapenv:Header>
+    <soapenv:Body>
+        <coun:consumeCountryRequest>
+            <coun:country>
+                <coun:name>Spain</coun:name>
+                <coun:population>46704314</coun:population>
+                <coun:capital>Madrid</coun:capital>
+                <coun:currency>EUR</coun:currency>
+            </coun:country>
+        </coun:consumeCountryRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

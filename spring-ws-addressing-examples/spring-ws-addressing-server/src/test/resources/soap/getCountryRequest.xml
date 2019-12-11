@@ -1,0 +1,12 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"
+                  xmlns:coun="http://www.rinat.my/server/domain/country">
+    <soapenv:Header xmlns:wsa="http://www.w3.org/2005/08/addressing">
+        <wsa:Action>http://www.rinat.my/server/domain/country/getCountry</wsa:Action>
+        <wsa:MessageID>uuid:413df12a-4881-4056-8d80-dec83ee20c78</wsa:MessageID>
+    </soapenv:Header>
+    <soapenv:Body>
+        <coun:getCountryRequest>
+            <coun:name>Spain</coun:name>
+        </coun:getCountryRequest>
+    </soapenv:Body>
+</soapenv:Envelope>

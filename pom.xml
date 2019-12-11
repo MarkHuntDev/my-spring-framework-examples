@@ -9,6 +9,7 @@
     <version>0.0</version>
     <modules>
         <module>spring-boot-examples</module>
+        <module>spring-ws-addressing-examples</module>
         <module>spring-ws-examples</module>
     </modules>
     <packaging>pom</packaging>

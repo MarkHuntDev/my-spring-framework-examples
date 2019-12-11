@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+                  xmlns:tns="http://www.rinat.my/consumer/domain/country"
+                  targetNamespace="http://www.rinat.my/consumer/domain/country">
+    <wsdl:types>
+        <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                   targetNamespace="http://www.rinat.my/consumer/domain/country"
+                   elementFormDefault="qualified">
+            <xs:element name="consumeCountryRequest">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="country" type="tns:country"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:complexType name="country">
+                <xs:sequence>
+                    <xs:element name="name" type="xs:string"/>
+                    <xs:element name="population" type="xs:int"/>
+                    <xs:element name="capital" type="xs:string"/>
+                    <xs:element name="currency" type="tns:currency"/>
+                </xs:sequence>
+            </xs:complexType>
+            <xs:simpleType name="currency">
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="GBP"/>
+                    <xs:enumeration value="EUR"/>
+                    <xs:enumeration value="PLN"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:schema>
+    </wsdl:types>
+    <wsdl:message name="ConsumeCountryRequest">
+        <wsdl:part element="tns:consumeCountryRequest" name="consumeCountryRequest"/>
+    </wsdl:message>
+    <wsdl:portType name="CountryConsumerPort">
+        <wsdl:operation name="consumeCountry">
+            <wsdl:input message="tns:ConsumeCountryRequest" name="consumeCountryRequest"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="CountryHandlerPortSoap11" type="tns:CountryConsumerPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="consumeCountry">
+            <soap:operation soapAction="http://www.rinat.my/consumer/domain/country/consumeCountry"/>
+            <wsdl:input name="consumeCountryRequest">
+                <soap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="CountryPortService">
+        <wsdl:port binding="tns:CountryHandlerPortSoap11" name="CountryPortSoap11">
+            <!-- ws.location property sets by maven -->
+            <soap:address location="${ws.location}"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>
