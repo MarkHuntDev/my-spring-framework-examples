@@ -11,6 +11,7 @@
         <module>spring-boot-examples</module>
         <module>spring-ws-addressing-examples</module>
         <module>spring-ws-examples</module>
+        <module>spring-boot-microservices-with-client-libraries</module>
     </modules>
     <packaging>pom</packaging>
 
